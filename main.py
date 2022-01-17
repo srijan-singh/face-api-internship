@@ -22,7 +22,7 @@ ENDPOINT = endpoint
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
 single_face_image_url = 'https://www.thehindu.com/news/national/qg1q0i/article38272961.ece/ALTERNATES/LANDSCAPE_1200/PM-Modi-inaugurates-colleges-in-TN'
-single_image_name = 'Narendar Modi'
+single_image_name = 'Narendra Modi'
 
 detected_faces = face_client.face.detect_with_url(url=single_face_image_url, detection_model='detection_03')
 if not detected_faces:
