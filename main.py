@@ -22,15 +22,15 @@ ENDPOINT = endpoint
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
 single_face_image_url = 'https://www.thehindu.com/news/national/qg1q0i/article38272961.ece/ALTERNATES/LANDSCAPE_1200/PM-Modi-inaugurates-colleges-in-TN'
-single_image_name = 'Narendra Modi'
+single_image_name = os.path.basename(single_face_image_url)
 
 detected_faces = face_client.face.detect_with_url(url=single_face_image_url, detection_model='detection_03')
 if not detected_faces:
     raise Exception('No face detected from image {}'.format(single_image_name))
 
+
 print('Detected face ID from', single_image_name, ':')
 for face in detected_faces: print (face.face_id)
 print()
-
 
 first_image_face_ID = detected_faces[0].face_id
