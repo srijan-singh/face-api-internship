@@ -5,4 +5,12 @@ Internship
 <br>
 # Face Recognition
 
-It uses face recognition API, which has face encodings to detect and recognize different faces. Provided image path and label which predict whether the encodings are same or not! If the encodings is same we return the image with label name. Else we return the image with default label No face detected from image.
+It uses Azure Face Detection API, which has pre-trained models to detect different faces. 
+<br>
+We can access this by providing API Key and Endpoint.
+<br>
+Provided image url on which face need to be detected.
+<br>
+If face will be detected it will print the face id.
+<br>
+Else it will print no face detected.
