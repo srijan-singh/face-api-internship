@@ -15,13 +15,13 @@ from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person
 
-KEY = key
+KEY = input("KEY: ")
 
-ENDPOINT = endpoint
+ENDPOINT = input("Endpoint: ")
 
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
-single_face_image_url = 'https://www.thehindu.com/news/national/qg1q0i/article38272961.ece/ALTERNATES/LANDSCAPE_1200/PM-Modi-inaugurates-colleges-in-TN'
+single_face_image_url = input("URL: ")
 single_image_name = os.path.basename(single_face_image_url)
 
 detected_faces = face_client.face.detect_with_url(url=single_face_image_url, detection_model='detection_03')
